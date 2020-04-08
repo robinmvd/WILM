@@ -1,0 +1,247 @@
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    color: #403e3f;
+}
+
+a {
+    color: #403e3f;
+    font-size: 20px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header {
+    width: 100%;
+    z-index: 9;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+    }
+
+    .li {
+        a {
+            display: block;
+            padding: 20px 20px;
+            text-decoration: none;
+
+        }
+    }
+
+    .menu-btn {
+        display: none;
+
+        &:hover {
+            background-color: #f4f4f4;
+        }
+
+        &:checked ~ .menu {
+            max-height: 240px;
+        }
+
+        &:checked ~ .menu-icon .nav-icon {
+            background: transparent;
+
+            &:before {
+                transform: rotate(-45deg);
+                top:0;
+            }
+
+            &:after {
+                transform: rotate(45deg);
+                top:0;
+            }
+        }
+    }
+
+    .logo {
+        display: block;
+        float: left;
+        font-size: 2em;
+        padding: 10px 20px;
+        text-decoration: none;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        clear: both;
+        max-height: 0;
+        transition: max-height .2s ease-out;
+
+        li {
+            padding: 30px;
+        }
+    }
+
+    .menu-icon {
+        cursor: pointer;
+        float: right;
+        padding: 28px 20px;
+        position: relative;
+        user-select: none;
+
+        .nav-icon {
+            background: #333;
+            display: block;
+            height: 3px;
+            position: relative;
+            transition: background .2s ease-out;
+            width: 30px;
+
+            &:before, &:after {
+                background: #333;
+                content: '';
+                display: block;
+                height: 100%;
+                position: absolute;
+                transition: all .2s ease-out;
+                width: 100%;
+
+            }
+
+            &:before {
+                top: 8px;
+            }
+
+            &:after {
+                top: -8px;
+            }
+        }
+    }
+    
+}
+
+.content {
+    padding-top: 50px;
+    margin-left: 22px;
+    color: #403e3f;
+
+    .line  {
+        border-top: solid 4px;
+        width: 70px;
+        padding-bottom: 20px;
+    }
+
+    .slogan {
+        width: 300px;
+        font-family: 'Archivo Black', sans-serif;
+        line-height: 40px;
+        font-size: 30px;
+    }
+
+    .more-button {
+        margin-top: 20px;
+        background-color: #FDCA55;
+        height: 40px;
+        width: 170px;
+        border: none;
+    
+        .more-button_text {
+            color: #403e3f;
+            display: inline;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 20px;
+        }
+    }
+
+    .robot {
+        position: relative;
+        top: 70px;
+        right: 50px;
+        float: right;
+        height: 340px;
+        width: 200px;
+        background-image: url(img/robot.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .circle1 {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: #5EBD43;
+        position: fixed;
+        bottom: -70px;
+        left: -60px;
+    }
+
+    .circle2 {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background-color: #ED2F5F;
+        position: fixed;
+        bottom: -50px;
+        left: 95px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .header {
+        li {
+            float: left;
+
+            a {
+                padding: 20px 30px;
+                display: block;
+            }
+        }
+
+        .menu {
+            flex-direction: row;
+            clear: none;
+            float: right;
+            max-height: none;
+
+            li {
+                padding: 10px;
+
+            }
+        }
+
+        .menu-icon {
+            display: none;
+        }
+    }
+
+    .content {
+
+        .line {
+            width: 40px;
+            position: relative;
+            bottom: -125px;
+        }
+
+        .slogan {
+            margin: 80px 0px 0px 70px;
+            width: 500px;
+            line-height: 50px;
+            font-size: 40px;
+        }
+
+        .more-button {
+            height: 50px;
+            margin-left: 70px;
+        }
+
+        .robot {
+            position: relative;
+            top: -80px;
+            right: 300px;
+            height: 387px;
+            width: 231px;
+        }
+
+    }
+
+    
+}
